@@ -9,11 +9,11 @@ open class Person {
     @Id
     @Column(name = "id", nullable = false)
     @GeneratedValue(strategy = GenerationType.AUTO)
-    var id: Int? = null
+    var id: Long? = null
 
     @Basic
-    @Column(name = "name")
-    open var name: String? = null
+    @Column(name = "patronymic")
+    open var patronymic: String? = null
 
     @Basic
     @Column(name = "sname")
@@ -34,7 +34,7 @@ open class Person {
 
     override fun toString(): String {
         return "Person(id=$id, " +
-                "name=$name, " +
+                "patronymic=$patronymic, " +
                 "sname=$sname, " +
                 "fname=$fname, " +
                 "email=$email, " +
@@ -47,7 +47,7 @@ open class Person {
 
         other as Person
 
-        if (name != other.name) return false
+        if (patronymic != other.patronymic) return false
         if (sname != other.sname) return false
         if (email != other.email) return false
 
@@ -55,7 +55,7 @@ open class Person {
     }
 
     override fun hashCode(): Int {
-        var result = name?.hashCode() ?: 0
+        var result = patronymic?.hashCode() ?: 0
         result = 31 * result + (sname?.hashCode() ?: 0)
         result = 31 * result + (email?.hashCode() ?: 0)
         return result

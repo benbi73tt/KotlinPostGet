@@ -12,7 +12,7 @@ class PersonServiceImpl(private val personRepository: PersonRepository) : Person
     }
 
     override fun findByName(name: String): Person? {
-        return personRepository.findByName(name)
+        return personRepository.findBySname(name)
     }
 
     override fun save(person: Person) {

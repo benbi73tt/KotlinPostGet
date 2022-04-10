@@ -16,7 +16,7 @@ class MainController(private val personService: PersonService) {
             ResponseEntity.ok(person)
         } else
             ResponseEntity.notFound().build()
-        return ResponseEntity.ok("name $name")
+        return ResponseEntity.ok("patronymic $name")
     }
 
 
